@@ -16,6 +16,7 @@ public class SubmarineTest
     public void InitialStatePosition()
     {
         _submarine.Position.Should().Be(0);
+        _submarine.Depth.Should().Be(0);
     }
 
     [Fact]
