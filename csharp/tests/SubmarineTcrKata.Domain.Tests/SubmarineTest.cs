@@ -29,4 +29,10 @@ public class SubmarineTest
         _submarine.Depth.Should().Be(0);
         _submarine.Aim.Should().Be(0);
     }
+    
+    [Fact]
+    public void GivenForwardAndThenDownCommandShouldBeUpdatePositionAndAim()
+    {
+      
+    }
 }
