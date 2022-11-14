@@ -17,4 +17,12 @@ public class SubmarineTest
     {
         _submarine.Position.Should().Be(0);
     }
+
+    [Fact]
+    public void TestFroward()
+    {
+        _submarine.ExecuteCommand("forward 5");
+
+        _submarine.Position.Should().Be(5);
+    }
 }

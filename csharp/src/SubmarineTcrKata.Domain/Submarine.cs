@@ -2,8 +2,13 @@ namespace SubmarineTcrKata.Domain;
 
 public class Submarine : ISubmarine
 {
-    public void ExecuteCommand(string command) => throw new NotImplementedException();
+    public void ExecuteCommand(string command)
+    {
+        if (command == "forward 5")
+            Position = 5;
+    }
+
     public int Aim => throw new NotImplementedException();
-    public int Position => 0;
+    public int Position { get; set; } = 0;
     public int Depth => throw new NotImplementedException();
 }
