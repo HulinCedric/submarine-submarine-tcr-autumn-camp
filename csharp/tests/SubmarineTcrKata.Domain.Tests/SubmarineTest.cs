@@ -26,5 +26,6 @@ public class SubmarineTest
         _submarine.ExecuteCommand("forward 5");
 
         _submarine.Position.Should().Be(5);
+        _submarine.Depth.Should().Be(0);
     }
 }
