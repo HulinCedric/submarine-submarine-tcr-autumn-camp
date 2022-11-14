@@ -8,7 +8,7 @@ public class Submarine : ISubmarine
             Position = 5;
 
         if (command == "down 5")
-            Aim = 5;
+            Aim += 5;
 
         if (command == "down 8")
             Aim += 8;
