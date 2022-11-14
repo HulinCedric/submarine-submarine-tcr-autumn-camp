@@ -12,6 +12,7 @@ public class SubmarineTest
     [Fact]
     public void SomeFakeTest() => _submarine.Should().NotBeNull();
 
+    [Fact]
     public void Tests()
     {
         _submarine.Position.Should().Be(0);
