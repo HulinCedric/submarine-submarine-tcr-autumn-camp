@@ -11,7 +11,7 @@ public class Submarine : ISubmarine
             Aim = 5;
 
         if (command == "down 8")
-            Aim = 8;
+            Aim += 8;
     }
 
     public int Aim { get; private set; } = 0;

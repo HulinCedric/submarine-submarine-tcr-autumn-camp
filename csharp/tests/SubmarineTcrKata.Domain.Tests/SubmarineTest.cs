@@ -47,4 +47,12 @@ public class SubmarineTest
         _submarine.ExecuteCommand("down 8");
         _submarine.Aim.Should().Be(8);
     }
+    
+    [Fact]
+    public void TestDown2()
+    {
+        _submarine.ExecuteCommand("down 8");
+        _submarine.ExecuteCommand("down 8");
+        _submarine.Aim.Should().Be(16);
+    }
 }
