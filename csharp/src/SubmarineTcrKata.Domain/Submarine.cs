@@ -4,6 +4,7 @@ public class Submarine : ISubmarine
 {
     public void ExecuteCommand(string command)
     {
+        var value = command.Split(" ")[1];
         if (command == "forward 5")
             Position = 5;
 
