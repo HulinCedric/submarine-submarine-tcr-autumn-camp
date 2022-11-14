@@ -8,7 +8,7 @@ public class Submarine : ISubmarine
             Position = 5;
     }
 
-    public int Aim => throw new NotImplementedException();
+    public int Aim => 0;
     public int Position { get; private set; } = 0;
     public int Depth => 0;
 }
