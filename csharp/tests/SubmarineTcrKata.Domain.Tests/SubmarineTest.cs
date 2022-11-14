@@ -21,7 +21,7 @@ public class SubmarineTest
     }
 
     [Fact]
-    public void TestFroward()
+    public void TestForward()
     {
         _submarine.ExecuteCommand("forward 5");
 
