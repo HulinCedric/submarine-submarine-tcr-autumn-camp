@@ -9,6 +9,9 @@ public class Submarine : ISubmarine
 
         if (command == "down 5")
             Aim = 5;
+
+        if (command == "down 8")
+            Aim = 8;
     }
 
     public int Aim { get; private set; } = 0;

@@ -12,7 +12,6 @@ Verifying the submarine controls are correct
         And submarine position should be 5
         And submarine aim should be 0
 
-    @InProgress
     Scenario: Step 2
         When submarine receives command forward 5
         And submarine receives command down 5
