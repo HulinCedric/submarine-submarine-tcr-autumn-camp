@@ -4,15 +4,14 @@ public class Submarine : ISubmarine
 {
     public void ExecuteCommand(string command)
     {
-        var value = command.Split(" ")[1];
+        
+        var value = int.Parse(command.Split(" ")[1]);
+        var commandName = command.Split(" ")[0];
         if (command == "forward 5")
             Position = 5;
 
-        if (command == "down 5")
-            Aim += 5;
-
-        if (command == "down 8")
-            Aim += 8;
+        if (commandName == "down")
+            Aim += value;
     }
 
     public int Aim { get; private set; } = 0;
