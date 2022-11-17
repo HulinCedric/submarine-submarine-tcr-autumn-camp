@@ -16,6 +16,7 @@ public class SubmarineTest
     public void Test()
     {
         _submarine.Position.Should().Be(0);
+        _submarine.Aim.Should().Be(0);
     }
     
     [Fact]

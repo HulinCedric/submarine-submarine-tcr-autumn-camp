@@ -9,7 +9,7 @@ public class Submarine : ISubmarine
         position += 1;
     }
 
-    public int Aim => throw new NotImplementedException();
+    public int Aim => 0;
     public int Position => position;
     public int Depth => throw new NotImplementedException();
 }
