@@ -31,6 +31,16 @@ public class SubmarineTest
     }
     
     [Fact]
+    public void MoveForward8()
+    {
+        _submarine.ExecuteCommand("forward 8");
+        
+        _submarine.Position.Should().Be(8);
+        _submarine.Aim.Should().Be(0);
+        _submarine.Depth.Should().Be(0);
+    }
+    
+    [Fact]
     public void MoveUp()
     {
         _submarine.ExecuteCommand("up 1");

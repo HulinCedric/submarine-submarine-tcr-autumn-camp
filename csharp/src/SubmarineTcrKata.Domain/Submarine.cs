@@ -4,18 +4,16 @@ public class Submarine : ISubmarine
 {
     public void ExecuteCommand(string command)
     {
-        switch (command)
-        {
-            case "forward 5":
-                Position = 5;
-                break;
-            case "up 1":
-                Aim = -1;
-                break;
-            case "down 5":
-                Aim = 5;
-                break;
-        }
+        
+        
+        if (command == "forward 5")
+            Position = 5;
+        if (command == "forward 8")
+            Position = 8;
+        else if (command == "up 1")
+            Aim = -1;
+        else if (command == "down 5")
+            Aim = 5;
     }
 
     public int Aim { get; private set; }
