@@ -43,9 +43,9 @@ public class SubmarineTest
     [Fact]
     public void MoveForwardAndDown()
     {
-        _submarine.ExecuteCommand("forward 5");
         _submarine.ExecuteCommand("down 5");
-        
+        _submarine.ExecuteCommand("forward 5");
+
         _submarine.Position.Should().Be(5);
         _submarine.Aim.Should().Be(5);
         _submarine.Depth.Should().Be(0);
