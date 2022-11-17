@@ -21,6 +21,12 @@ public class SubmarineTest
     }
     
     [Fact]
+    public void MoveUp2()
+    {
+        
+    }
+    
+    [Fact]
     public void MoveUp()
     {
         _submarine.ExecuteCommand("up 1");

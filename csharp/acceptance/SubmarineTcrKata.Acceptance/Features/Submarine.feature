@@ -1,7 +1,6 @@
 Feature: Submarine
 Verifying the submarine controls are correct
 
-    @InProgress
     Scenario: Submarine default position
         Then submarine depth should be 0
         And submarine position should be 0
