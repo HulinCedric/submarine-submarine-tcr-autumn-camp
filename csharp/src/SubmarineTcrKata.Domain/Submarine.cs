@@ -10,19 +10,16 @@ public class Submarine : ISubmarine
         if (command.Equals("forward 5"))
         {
             position = 5;
-            return;
         }
         
         if (command.Equals("up 1"))
         {
             aim = -1;
-            return;
         }
         
         if (command.Equals("down 5"))
         {
             aim = 5;
-            return;
         }
     }
 
