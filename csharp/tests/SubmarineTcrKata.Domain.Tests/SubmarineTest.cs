@@ -13,7 +13,7 @@ public class SubmarineTest
     public void SomeFakeTest() => _submarine.Should().NotBeNull();
 
     [Fact]
-    public void Test()
+    public void SubmarineShouldBeAtInitialStartingLocation()
     {
         _submarine.Position.Should().Be(0);
         _submarine.Aim.Should().Be(0);
