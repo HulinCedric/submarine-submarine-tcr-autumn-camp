@@ -6,7 +6,6 @@ Verifying the submarine controls are correct
         And submarine position should be 0
         And submarine aim should be 0
 
-    @InProgress
     Scenario: Step 1
         When submarine receives command forward 5
         Then submarine depth should be 0
