@@ -40,6 +40,7 @@ public class SubmarineTest
     public void MoveForward2(int commandValue)
     {
         _submarine.ExecuteCommand($"forward {commandValue}");
+        
         _submarine.ExecuteCommand($"forward {commandValue}");
         
         _submarine.Position.Should().Be(commandValue*2);
