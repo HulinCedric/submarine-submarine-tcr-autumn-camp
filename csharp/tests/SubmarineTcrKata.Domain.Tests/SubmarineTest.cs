@@ -15,6 +15,6 @@ public class SubmarineTest
     [Fact]
     public void Test()
     {
-        
+        _submarine.Position.Should().Be(0);
     }
 }
