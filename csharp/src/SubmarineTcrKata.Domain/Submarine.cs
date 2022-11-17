@@ -15,6 +15,7 @@ public class Submarine : ISubmarine
         if (command.Equals("up 1"))
         {
             aim = -1;
+            
         }
         
         if (command.Equals("down 5"))
