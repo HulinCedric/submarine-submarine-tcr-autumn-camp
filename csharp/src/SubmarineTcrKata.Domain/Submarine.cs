@@ -2,33 +2,25 @@ namespace SubmarineTcrKata.Domain;
 
 public class Submarine : ISubmarine
 {
-    private int position;
-    private int aim;
-
     public void ExecuteCommand(string command)
     {
-        if (command.Equals("forward 5"))
+        switch (command)
         {
-            position = 5;
-        }
-        
-        if (command.Equals("up 1"))
-        {
-            aim = -1;
-            
-        }
-        
-        if (command.Equals("down 5"))
-        {
-            aim = 5;
+            case "forward 5":
+                Position = 5;
+                break;
+            case "up 1":
+                Aim = -1;
+                break;
+            case "down 5":
+                Aim = 5;
+                break;
         }
     }
 
-    public int Aim
-        => aim;
+    public int Aim { get; private set; }
 
-    public int Position
-        => position;
+    public int Position { get; private set; }
 
     public int Depth
         => 0;
