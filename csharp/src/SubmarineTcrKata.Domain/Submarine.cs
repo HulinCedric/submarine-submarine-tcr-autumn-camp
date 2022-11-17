@@ -6,6 +6,7 @@ public class Submarine : ISubmarine
     {
         var commandName = command.Split(" ")[0];
         var commandValue = command.Split(" ")[1];
+        
         if (commandName == "forward")
             Position += Convert.ToInt32(commandValue);
         else if (command == "up 1")
