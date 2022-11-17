@@ -23,6 +23,6 @@ public class SubmarineTest
     {
         _submarine.ExecuteCommand("up 1");
 
-        _submarine.Position.Should().Be(0);
+        _submarine.Position.Should().Be(1);
     }
 }
