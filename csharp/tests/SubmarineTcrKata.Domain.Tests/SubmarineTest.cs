@@ -17,4 +17,12 @@ public class SubmarineTest
     {
         _submarine.Position.Should().Be(0);
     }
+    
+    [Fact]
+    public void MoveUp()
+    {
+        _submarine.ExecuteCommand("up 0");
+
+        _submarine.Position.Should().Be(0);
+    }
 }
