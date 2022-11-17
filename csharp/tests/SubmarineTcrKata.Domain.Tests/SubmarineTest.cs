@@ -30,7 +30,6 @@ public class SubmarineTest
     public void MoveUp()
     {
         _submarine.ExecuteCommand("up 1");
-
-        _submarine.Position.Should().Be(1);
+        _submarine.Aim.Should().Be(-1);
     }
 }
