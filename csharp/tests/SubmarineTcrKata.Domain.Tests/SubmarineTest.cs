@@ -32,7 +32,20 @@ public class SubmarineTest
         _submarine.Aim.Should().Be(0);
         _submarine.Depth.Should().Be(0);
     }
-   
+    
+    [Theory]
+    [InlineData(5)]
+    [InlineData(8)]
+    [InlineData(10)]
+    public void MoveForward2(int commandValue)
+    {
+        _submarine.ExecuteCommand($"forward {commandValue}");
+        _submarine.ExecuteCommand($"forward {commandValue}");
+        
+        _submarine.Position.Should().Be(commandValue*2);
+        _submarine.Aim.Should().Be(0);
+        _submarine.Depth.Should().Be(0);
+    }
     
     [Fact]
     public void MoveUp()
