@@ -11,5 +11,5 @@ public class Submarine : ISubmarine
 
     public int Aim => 0;
     public int Position => position;
-    public int Depth => throw new NotImplementedException();
+    public int Depth => 0;
 }
