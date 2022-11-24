@@ -1,20 +1,17 @@
 Feature: Submarine
 Verifying the submarine controls are correct
 
-    @InProgress
     Scenario: Submarine default position
         Then submarine depth should be 0
         And submarine position should be 0
         And submarine aim should be 0
 
-    @InProgress
     Scenario: Step 1
         When submarine receives command forward 5
         Then submarine depth should be 0
         And submarine position should be 5
         And submarine aim should be 0
 
-    @InProgress
     Scenario: Step 2
         When submarine receives command forward 5
         And submarine receives command down 5
