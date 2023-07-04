@@ -11,4 +11,5 @@ public class SubmarineTest
 
     [Fact]
     public void SomeFakeTest() => _submarine.Should().NotBeNull();
+    
 }
