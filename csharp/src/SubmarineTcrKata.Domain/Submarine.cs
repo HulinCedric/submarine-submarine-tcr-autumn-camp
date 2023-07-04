@@ -2,6 +2,15 @@ namespace SubmarineTcrKata.Domain;
 
 public class Submarine : ISubmarine
 {
+    public Submarine()
+    {
+        Position = 0;
+        Aim = 0;
+        Depth = 0;
+    }
+    
+   
+    
     public void ExecuteCommand(string command)
     {
         var commandParts = command.Split(" ");
