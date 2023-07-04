@@ -13,6 +13,6 @@ public class SubmarineTest
     [Fact]
     public void SomeFakeTest()
     {
-        _submarine.Should().NotBeNull();
+        _submarine.Position.Should().Be(0);
     }
 }
