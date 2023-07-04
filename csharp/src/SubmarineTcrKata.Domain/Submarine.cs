@@ -4,7 +4,15 @@ public class Submarine : ISubmarine
 {
     public void ExecuteCommand(string command)
     {
-        Position = 5;
+        if (command == "forward 5")
+        {
+            Position = 5;
+        }
+        
+        if (command == "forward 8")
+        {
+            Position = 8;
+        }
 
         if (command == "down 5")
         {
