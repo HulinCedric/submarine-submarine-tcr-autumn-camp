@@ -16,7 +16,7 @@ public class Submarine : ISubmarine
 
         if (commandName == "down")
         {
-            Aim = commandValue;
+            Aim += commandValue;
         }
     }
 
