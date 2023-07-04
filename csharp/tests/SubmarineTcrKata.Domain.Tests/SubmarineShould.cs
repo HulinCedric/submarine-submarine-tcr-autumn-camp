@@ -15,44 +15,47 @@ public static class SubmarineVerificationExtensions
 
 public class SubmarineShould
 {
-    private readonly Submarine _submarine;
-
-    public SubmarineShould()
-        => _submarine = new Submarine();
-
     [Fact]
     public void Be_at_default_position()
-        => _submarine.StatusShouldBe(0, 0, 0);
-
-
-    [Theory]
-    [InlineData("forward 5",5)]
-    [InlineData("forward 8",8)]
-    public void Move_on_with_forward_command(string command, int expectedPosition)
     {
-        _submarine.ExecuteCommand(command);
+        var submarine = new Submarine();
 
-        _submarine.StatusShouldBe(expectedPosition, 0, 0);
+        submarine.StatusShouldBe(0, 0, 0);
     }
 
-    
+    [Theory]
+    [InlineData("forward 5", 5)]
+    [InlineData("forward 8", 8)]
+    public void Move_on_with_forward_command(string command, int expectedPosition)
+    {
+        var submarine = new Submarine();
+
+
+        submarine.ExecuteCommand(command);
+
+        submarine.StatusShouldBe(expectedPosition, 0, 0);
+    }
+
+
     [Fact]
     public void Move_on_aim_with_down_command()
     {
-        _submarine.ExecuteCommand("down 5");
+        var submarine = new Submarine();
 
-        _submarine.StatusShouldBe(0, 5, 0);
+        submarine.ExecuteCommand("down 5");
 
+        submarine.StatusShouldBe(0, 5, 0);
     }
-    
+
     [Fact]
     public void Move_on_depth_depending_on_aim_with_forward_command()
     {
-        _submarine.ExecuteCommand("forward 5");
-        _submarine.ExecuteCommand("down 5");
-        _submarine.ExecuteCommand("forward 8");
+        var submarine = new Submarine();
 
-        _submarine.StatusShouldBe(13, 5, 40);
+        submarine.ExecuteCommand("forward 5");
+        submarine.ExecuteCommand("down 5");
+        submarine.ExecuteCommand("forward 8");
 
+        submarine.StatusShouldBe(13, 5, 40);
     }
 }
