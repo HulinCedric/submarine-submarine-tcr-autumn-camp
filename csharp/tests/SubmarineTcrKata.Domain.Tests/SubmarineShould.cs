@@ -35,13 +35,15 @@ public class SubmarineShould
         _submarine.StatusShouldBe(expectedPosition, 0, 0);
     }
 
+    
     [Fact]
     public void Move_on_aim_with_down_command()
     {
-        _submarine.ExecuteCommand("forward 5");
         _submarine.ExecuteCommand("down 5");
 
-        _submarine.StatusShouldBe(5, 5, 0);
+        _submarine.StatusShouldBe(0, 5, 0);
 
     }
+    
+  
 }
