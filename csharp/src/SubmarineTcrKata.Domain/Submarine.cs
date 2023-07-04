@@ -9,13 +9,7 @@ public class Submarine : ISubmarine
         Depth = 0;
     }
     
-public Submarine(int position, int aim, int depth)
-    {
-        Position = position;
-        Aim = aim;
-        Depth = depth;
-    }
-   
+  
     
     public void ExecuteCommand(string command)
     {
@@ -35,9 +29,9 @@ public Submarine(int position, int aim, int depth)
         }
     }
 
-    public int Aim { get; private set; }
+    public int Aim { get; set; }
 
-    public int Position { get; private set; }
+    public int Position { get; set; }
 
-    public int Depth { get; private set; }
+    public int Depth { get; set; }
 }
