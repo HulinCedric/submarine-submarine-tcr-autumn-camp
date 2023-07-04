@@ -10,7 +10,8 @@ public class Submarine : ISubmarine
         
         if (commandName == "forward")
         {
-            Position = commandValue;
+            Position += commandValue;
+            Depth += Aim * commandValue;
         }
 
         if (commandName == "down")
@@ -23,6 +24,5 @@ public class Submarine : ISubmarine
 
     public int Position { get; private set; }
 
-    public int Depth
-        => 0;
+    public int Depth { get; private set; }
 }

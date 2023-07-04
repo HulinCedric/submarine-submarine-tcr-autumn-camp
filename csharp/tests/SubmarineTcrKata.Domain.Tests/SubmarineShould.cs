@@ -50,8 +50,9 @@ public class SubmarineShould
     {
         _submarine.ExecuteCommand("forward 5");
         _submarine.ExecuteCommand("down 5");
+        _submarine.ExecuteCommand("forward 8");
 
-        _submarine.StatusShouldBe(5, 5, 0);
+        _submarine.StatusShouldBe(13, 5, 40);
 
     }
 }
