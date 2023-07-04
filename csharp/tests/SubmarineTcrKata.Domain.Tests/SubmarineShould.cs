@@ -1,5 +1,6 @@
 using FluentAssertions;
 using Xunit;
+using static SubmarineTcrKata.Domain.Tests.SubmarineTestBuilder;
 
 namespace SubmarineTcrKata.Domain.Tests;
 
@@ -15,16 +16,19 @@ public static class SubmarineVerificationExtensions
 
 public class SubmarineTestBuilder
 {
-    private int _aim;
     private readonly int _depth;
     private readonly int _position;
+    private int _aim;
 
-    public SubmarineTestBuilder()
+    private SubmarineTestBuilder()
     {
         _aim = 0;
         _position = 0;
         _depth = 0;
     }
+
+    public static SubmarineTestBuilder Submarine()
+        => new();
 
     public Submarine Build()
         => new()
@@ -47,7 +51,7 @@ public class SubmarineShould
     [Fact]
     public void Be_at_default_position()
     {
-        var submarine = new SubmarineTestBuilder().Build();
+        var submarine = Submarine().Build();
 
         submarine.StatusShouldBe(0, 0, 0);
     }
@@ -57,7 +61,7 @@ public class SubmarineShould
     [InlineData("forward 8", 8)]
     public void Move_on_with_forward_command(string command, int expectedPosition)
     {
-        var submarine = new SubmarineTestBuilder().Build();
+        var submarine = Submarine().Build();
 
 
         submarine.ExecuteCommand(command);
@@ -65,15 +69,15 @@ public class SubmarineShould
         submarine.StatusShouldBe(expectedPosition, 0, 0);
     }
 
-    
+
     [Fact]
     public void Be_equal_on_value()
     {
-        var submarine = new SubmarineTestBuilder()
+        var submarine = Submarine()
             .WithAim(5)
             .Build();
-        
-        var equivalentSubmarine = new SubmarineTestBuilder()
+
+        var equivalentSubmarine = Submarine()
             .WithAim(5)
             .Build();
 
@@ -83,19 +87,21 @@ public class SubmarineShould
     [Fact]
     public void Move_on_aim_with_down_command()
     {
-        var submarine = new SubmarineTestBuilder()
+        var submarine = Submarine()
             .WithAim(5)
             .Build();
 
         submarine.ExecuteCommand("down 5");
 
-        submarine.StatusShouldBe(0, 10, 0);
+        var expectedSubmarine = Submarine().WithAim(10).Build();
+        
+        submarine.Should().BeEquivalentTo(expectedSubmarine);
     }
 
     [Fact]
     public void Move_on_depth_depending_on_aim_with_forward_command()
     {
-        var submarine = new SubmarineTestBuilder().Build();
+        var submarine = Submarine().Build();
 
         submarine.ExecuteCommand("forward 5");
         submarine.ExecuteCommand("down 5");
