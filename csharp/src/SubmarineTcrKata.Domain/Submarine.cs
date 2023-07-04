@@ -4,14 +4,13 @@ public class Submarine : ISubmarine
 {
     public void ExecuteCommand(string command)
     {
-        if (command == "forward 5")
-        {
-            Position = 5;
-        }
+        var commandParts = command.Split(" ");
+        var commandName = commandParts[0];
+        var commandValue = int.Parse(commandParts[1]);
         
-        if (command == "forward 8")
+        if (commandName == "forward")
         {
-            Position = 8;
+            Position = commandValue;
         }
 
         if (command == "down 5")
