@@ -28,7 +28,7 @@ public class SubmarineShould
     [InlineData("forward 8", 8)]
     public void Move_on_with_forward_command(string command, int expectedPosition)
     {
-        var submarine = new Submarine();
+        var submarine = new Submarine(0, 0, 0);
 
 
         submarine.ExecuteCommand(command);
