@@ -25,12 +25,13 @@ public class SubmarineShould
         => _submarine.StatusShouldBe(0, 0, 0);
 
 
-    [Fact]
-    public void Move_on_with_forward_command()
+    [Theory]
+    [InlineData("forward 5",5)]
+    public void Move_on_with_forward_command(string command, int expectedPosition)
     {
-        _submarine.ExecuteCommand("forward 5");
+        _submarine.ExecuteCommand(command);
 
-        _submarine.StatusShouldBe(5, 0, 0);
+        _submarine.StatusShouldBe(expectedPosition, 0, 0);
     }
 
     [Fact]
