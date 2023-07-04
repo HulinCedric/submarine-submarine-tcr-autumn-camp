@@ -65,6 +65,20 @@ public class SubmarineShould
         submarine.StatusShouldBe(expectedPosition, 0, 0);
     }
 
+    
+    [Fact]
+    public void Be_equal_on_value()
+    {
+        var submarine = new SubmarineTestBuilder()
+            .WithAim(5)
+            .Build();
+        
+        var equivalentSubmarine = new SubmarineTestBuilder()
+            .WithAim(5)
+            .Build();
+
+        submarine.Should().Be(equivalentSubmarine);
+    }
 
     [Fact]
     public void Move_on_aim_with_down_command()
