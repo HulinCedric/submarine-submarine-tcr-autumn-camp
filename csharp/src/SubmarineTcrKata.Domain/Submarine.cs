@@ -3,13 +3,14 @@ namespace SubmarineTcrKata.Domain;
 public class Submarine : ISubmarine
 {
     public void ExecuteCommand(string command)
-        => throw new NotImplementedException();
+    {
+        Position = 5;
+    }
 
     public int Aim
         => 0;
 
-    public int Position
-        => 0;
+    public int Position { get; private set; }
 
     public int Depth
         => 0;
