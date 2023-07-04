@@ -13,11 +13,16 @@ public class SubmarineShould
     [Fact]
     public void Be_at_default_position()
     {
-        _submarine.Position.Should().Be(0);
-        _submarine.Aim.Should().Be(0);
-        _submarine.Depth.Should().Be(0);
+        VerifyStatus(_submarine);
     }
-    
+
+    public static void VerifyStatus(ISubmarine submarine)
+    {
+        submarine.Position.Should().Be(0);
+        submarine.Aim.Should().Be(0);
+        submarine.Depth.Should().Be(0);
+    }
+
     [Fact]
     public void Move_on_with_forward_command()
     {
