@@ -34,7 +34,7 @@ public class SubmarineShould
     [Fact]
     public void Be_at_default_position()
     {
-        var submarine = new Submarine();
+        var submarine = new SubmarineTestBuilder().Build();
 
         submarine.StatusShouldBe(0, 0, 0);
     }
@@ -44,7 +44,7 @@ public class SubmarineShould
     [InlineData("forward 8", 8)]
     public void Move_on_with_forward_command(string command, int expectedPosition)
     {
-        var submarine = new Submarine();
+        var submarine = new SubmarineTestBuilder().Build();
 
 
         submarine.ExecuteCommand(command);
@@ -56,7 +56,7 @@ public class SubmarineShould
     [Fact]
     public void Move_on_aim_with_down_command()
     {
-        var submarine = new Submarine();
+        var submarine = new SubmarineTestBuilder().Build();
 
         submarine.ExecuteCommand("down 5");
 
