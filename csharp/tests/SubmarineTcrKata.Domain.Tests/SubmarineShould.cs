@@ -45,5 +45,13 @@ public class SubmarineShould
 
     }
     
-  
+    [Fact]
+    public void Move_on_depth_depending_on_aim_with_forward_command()
+    {
+        _submarine.ExecuteCommand("forward 5");
+        _submarine.ExecuteCommand("down 5");
+
+        _submarine.StatusShouldBe(5, 5, 0);
+
+    }
 }
