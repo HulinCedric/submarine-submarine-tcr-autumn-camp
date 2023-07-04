@@ -13,6 +13,22 @@ public static class SubmarineVerificationExtensions
     }
 }
 
+public class SubmarineTestBuilder
+{
+    public SubmarineTestBuilder()
+    {
+        
+    }
+    
+    public  Submarine Build()
+        => new()
+        {
+            Aim = 0,
+            Position = 0,
+            Depth = 0
+        };
+}
+
 public class SubmarineShould
 {
     [Fact]
@@ -50,12 +66,7 @@ public class SubmarineShould
     [Fact]
     public void Move_on_depth_depending_on_aim_with_forward_command()
     {
-        var submarine = new Submarine
-        {
-            Aim = 0,
-            Position = 0,
-            Depth = 0
-        };
+        var submarine = new SubmarineTestBuilder().Build();
 
         submarine.ExecuteCommand("forward 5");
         submarine.ExecuteCommand("down 5");
