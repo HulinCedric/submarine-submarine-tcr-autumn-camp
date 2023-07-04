@@ -30,9 +30,7 @@ public class SubmarineShould
     {
         _submarine.ExecuteCommand("forward 5");
 
-        _submarine.Position.Should().Be(5);
-        _submarine.Aim.Should().Be(0);
-        _submarine.Depth.Should().Be(0);
+        _submarine.StatusShouldBe(5, 0, 0);
     }
 
     [Fact]
@@ -41,8 +39,7 @@ public class SubmarineShould
         _submarine.ExecuteCommand("forward 5");
         _submarine.ExecuteCommand("down 5");
 
-        _submarine.Position.Should().Be(5);
-        _submarine.Aim.Should().Be(5);
-        _submarine.Depth.Should().Be(0);
+        _submarine.StatusShouldBe(5, 5, 0);
+
     }
 }
