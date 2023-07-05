@@ -6,7 +6,7 @@ public class SubmarineDriver
 {
     private readonly Submarine submarine;
 
-    public SubmarineDriver(Submarine submarine) => this.submarine = submarine;
+    public SubmarineDriver() => this.submarine = new Submarine();
 
     public int GetSubmarineDepth() => this.submarine.Depth;
     

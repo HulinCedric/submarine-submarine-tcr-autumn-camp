@@ -4,7 +4,6 @@ public record Submarine : ISubmarine
 {
 
     
-    // Default constructor, no parameters
     public Submarine()
     {
         Depth = 0;
@@ -12,7 +11,6 @@ public record Submarine : ISubmarine
         Aim = 0;
     }
 
-    // Parameterized constructor
     public Submarine(int initialDepth, int initialPosition, int initialAim)
     {
         Depth = initialDepth;
