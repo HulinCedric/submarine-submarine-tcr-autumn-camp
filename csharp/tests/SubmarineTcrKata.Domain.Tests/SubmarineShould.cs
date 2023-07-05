@@ -25,7 +25,7 @@ public class SubmarineShould
 
         submarine.Should().BeEquivalentTo(Submarine().WithPosition(expectedPosition).Build());
     }
-    
+
     [Fact]
     public void Move_multiple_of_aim_and_X_on_depth_like_in_forward_X_command()
     {
@@ -35,7 +35,7 @@ public class SubmarineShould
 
         submarine.Should().BeEquivalentTo(Submarine().WithDepth(40).WithPosition(13).WithAim(5).Build());
     }
-    
+
     [Fact]
     public void Move_X_on_aim_like_in_down_X_command()
     {
@@ -45,8 +45,8 @@ public class SubmarineShould
 
         submarine.Should().BeEquivalentTo(Submarine().WithDepth(0).WithPosition(5).WithAim(5).Build());
     }
-    
-    
+
+
     [Fact]
     public void Decrease_X_on_aim_like_in_up_X_command()
     {
@@ -70,8 +70,4 @@ public class SubmarineShould
 
         submarine.Should().Be(equivalentSubmarine);
     }
-
-  
-
-   
 }
