@@ -103,5 +103,13 @@ public class SubmarineShould
         submarine.Should().BeEquivalentTo(Submarine().WithAim(10).Build());
     }
 
-   
+    [Fact]
+    public void Move_on_depth_depending_on_aim_with_forward_command()
+    {
+        var submarine = Submarine().WithDepth(0).WithPosition(5).WithAim(5).Build();
+
+        submarine.ExecuteCommand("forward 8");
+
+        submarine.Should().BeEquivalentTo(Submarine().WithDepth(40).WithPosition(13).WithAim(5).Build());
+    }
 }
