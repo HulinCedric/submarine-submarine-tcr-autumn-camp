@@ -1,7 +1,16 @@
 namespace SubmarineTcrKata.Domain;
 
-public record Submarine() : ISubmarine
+public record Submarine : ISubmarine
 {
+
+    
+    public Submarine(int aim = 0, int position = 0, int depth = 0)
+    {
+        Aim = aim;
+        Position = position;
+        Depth = depth;
+    }
+
     public void ExecuteCommand(string command)
     {
         var commandParts = command.Split(" ");
