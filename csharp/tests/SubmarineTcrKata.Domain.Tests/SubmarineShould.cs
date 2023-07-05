@@ -25,6 +25,16 @@ public class SubmarineShould
 
         submarine.Should().BeEquivalentTo(Submarine().WithPosition(expectedPosition).Build());
     }
+    
+    [Fact]
+    public void Move_multiple_of_aim_and_X_on_depth_like_in_forward_X_command()
+    {
+        var submarine = Submarine().WithDepth(0).WithPosition(5).WithAim(5).Build();
+
+        submarine.ExecuteCommand("forward 8");
+
+        submarine.Should().BeEquivalentTo(Submarine().WithDepth(40).WithPosition(13).WithAim(5).Build());
+    }
 
     [Fact]
     public void Be_equal_on_value()
@@ -50,13 +60,5 @@ public class SubmarineShould
         submarine.Should().BeEquivalentTo(Submarine().WithAim(10).Build());
     }
 
-    [Fact]
-    public void Move_on_depth_depending_on_aim_with_forward_command()
-    {
-        var submarine = Submarine().WithDepth(0).WithPosition(5).WithAim(5).Build();
-
-        submarine.ExecuteCommand("forward 8");
-
-        submarine.Should().BeEquivalentTo(Submarine().WithDepth(40).WithPosition(13).WithAim(5).Build());
-    }
+   
 }
