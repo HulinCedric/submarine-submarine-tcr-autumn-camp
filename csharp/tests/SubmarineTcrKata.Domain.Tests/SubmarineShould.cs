@@ -17,7 +17,7 @@ public class SubmarineShould
     [Theory]
     [InlineData("forward 5", 5)]
     [InlineData("forward 8", 8)]
-    public void Move_on_position_with_forward_command(string command, int expectedPosition)
+    public void Move_X_on_position_like_ine_forward_X_command(string command, int expectedPosition)
     {
         var submarine = Submarine().Build();
 
