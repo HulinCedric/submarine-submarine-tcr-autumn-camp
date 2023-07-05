@@ -47,13 +47,13 @@ public class SubmarineShould
     }
     
     [Fact]
-    public void Decrease_X_on_aim_like_in_down_X_command()
+    public void Decrease_X_on_aim_like_in_up_X_command()
     {
-        var submarine = Submarine().WithDepth(0).WithPosition(5).WithAim(0).Build();
+        var submarine = Submarine().WithAim(10).Build();
 
-        submarine.ExecuteCommand("down 5");
+        submarine.ExecuteCommand("up 5");
 
-        submarine.Should().BeEquivalentTo(Submarine().WithDepth(0).WithPosition(5).WithAim(5).Build());
+        submarine.Should().BeEquivalentTo(Submarine().WithAim(5).Build());
     }
 
     [Fact]

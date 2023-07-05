@@ -21,6 +21,10 @@ public record Submarine(int Depth, int Position, int Aim) : ISubmarine
             case "down":
                 Aim += commandValue;
                 break;
+            
+            case "up":
+                Aim -= commandValue;
+                break;
         }
     }
 
