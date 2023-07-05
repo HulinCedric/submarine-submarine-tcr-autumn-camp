@@ -1,28 +1,32 @@
 namespace SubmarineTcrKata.Domain;
 
+
 public record Submarine(int Depth, int Position, int Aim) : ISubmarine
 {
     public Submarine() : this(0, 0, 0)
     {
     }
 
-    public void ExecuteCommand(string command)
+    public void ExecuteCommand(string commandDescription)
     {
-        var commandParts = command.Split(" ");
+        
+        var commandParts = commandDescription.Split(" ");
         var commandName = commandParts[0];
         var commandValue = int.Parse(commandParts[1]);
 
+        var command = new Command(commandName, commandValue);
+        
         switch (commandName)
         {
             case "forward":
-                Position += commandValue;
-                Depth += Aim * commandValue;
+                Position += command.Value;
+                Depth += Aim * command.Value;
                 break;
             case "down":
-                Aim += commandValue;
+                Aim += command.Value;
                 break;
             case "up":
-                Aim -= commandValue;
+                Aim -= command.Value;
                 break;
         }
     }
@@ -33,3 +37,5 @@ public record Submarine(int Depth, int Position, int Aim) : ISubmarine
 
     public int Depth { get; private set; } = Depth;
 }
+
+public record Command(string Name, int Value);
