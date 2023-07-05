@@ -11,7 +11,6 @@ public class SubmarineShould
     {
         var submarine = Submarine().Build();
 
-
         submarine.Should().BeEquivalentTo(Submarine().WithAim(0).WithAim(0).WithDepth(0).Build());
     }
 
