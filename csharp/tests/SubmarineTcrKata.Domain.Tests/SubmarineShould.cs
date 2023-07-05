@@ -17,7 +17,7 @@ public class SubmarineShould
     [Theory]
     [InlineData("forward 5", 5)]
     [InlineData("forward 8", 8)]
-    public void Move_on_with_forward_command(string command, int expectedPosition)
+    public void Move_on_position_with_forward_command(string command, int expectedPosition)
     {
         var submarine = Submarine().Build();
 
@@ -25,7 +25,6 @@ public class SubmarineShould
 
         submarine.Should().BeEquivalentTo(Submarine().WithPosition(expectedPosition).Build());
     }
-
 
     [Fact]
     public void Be_equal_on_value()
