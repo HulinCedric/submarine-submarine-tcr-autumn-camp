@@ -4,11 +4,20 @@ public record Submarine : ISubmarine
 {
 
     
-    public Submarine(int aim = 0, int position = 0, int depth = 0)
+    // Default constructor, no parameters
+    public Submarine()
     {
-        Aim = aim;
-        Position = position;
-        Depth = depth;
+        Depth = 0;
+        Position = 0;
+        Aim = 0;
+    }
+
+    // Parameterized constructor
+    public Submarine(int initialDepth, int initialPosition, int initialAim)
+    {
+        Depth = initialDepth;
+        Position = initialPosition;
+        Aim = initialAim;
     }
 
     public void ExecuteCommand(string command)
