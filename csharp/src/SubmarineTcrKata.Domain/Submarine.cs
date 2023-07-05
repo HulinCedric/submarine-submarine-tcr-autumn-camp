@@ -8,11 +8,11 @@ public record Submarine : ISubmarine
     {
     }
 
-    public Submarine(int initialDepth, int initialPosition, int initialAim)
+    public Submarine(int depth, int position, int aim)
     {
-        Depth = initialDepth;
-        Position = initialPosition;
-        Aim = initialAim;
+        Depth = depth;
+        Position = position;
+        Aim = aim;
     }
 
     public void ExecuteCommand(string command)
