@@ -2,7 +2,6 @@ namespace SubmarineTcrKata.Domain;
 
 public record Submarine : ISubmarine
 {
-
     
     public Submarine(): this(0,0,0)
     {
