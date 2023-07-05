@@ -46,7 +46,6 @@ Verifying the submarine controls are correct
         And submarine position should be 13
         And submarine aim should be 10
 
-    @InProgress
     Scenario: Step 6
         When submarine receives command forward 5
         And submarine receives command down 5
@@ -59,7 +58,6 @@ Verifying the submarine controls are correct
         And submarine aim should be 10
         And submarine final value should be 900
 
-    @InProgress
     Scenario: Full features
         When submarine receives command forward 1
         And submarine receives command forward 8
