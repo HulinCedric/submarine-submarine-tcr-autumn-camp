@@ -32,17 +32,17 @@ public record Command(string Name, int Value)
 
     public void ExecuteCommand(Submarine submarine)
     {
-        switch (this.Name)
+        switch (Name)
         {
             case "forward":
-                submarine.Position += this.Value;
-                submarine.Depth += submarine.Aim * this.Value;
+                submarine.Position += Value;
+                submarine.Depth += submarine.Aim * Value;
                 break;
             case "down":
-                submarine.Aim += this.Value;
+                submarine.Aim += Value;
                 break;
             case "up":
-                submarine.Aim -= this.Value;
+                submarine.Aim -= Value;
                 break;
         }
     }
