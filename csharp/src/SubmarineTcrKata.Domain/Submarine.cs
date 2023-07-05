@@ -11,21 +11,21 @@ public record Submarine(int Depth, int Position, int Aim) : ISubmarine
         Command.New(commandDescription).ExecuteCommand(this);
     }
 
-    public int Aim { get; internal set; } = Aim;
+    public int Aim { get; private set; } = Aim;
 
-    public int Position { get; internal set; } = Position;
+    public int Position { get; private set; } = Position;
 
-    public int Depth { get; internal set; } = Depth;
+    public int Depth { get; private set; } = Depth;
 
     public void MoveUp(int value)
-        => this.Aim -= value;
+        => Aim -= value;
 
     public void MoveDown(int value)
-        => this.Aim += value;
+        => Aim += value;
 
     public void MoveForward(int value)
     {
-        this.Position += value;
-        this.Depth += this.Aim * value;
+        Position += value;
+        Depth += Aim * value;
     }
 }
