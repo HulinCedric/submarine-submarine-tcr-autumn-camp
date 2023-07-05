@@ -20,15 +20,15 @@ public record Submarine : ISubmarine
         var commandName = commandParts[0];
         var commandValue = int.Parse(commandParts[1]);
         
-        if (commandName == "forward")
+        switch (commandName)
         {
-            Position += commandValue;
-            Depth += Aim * commandValue;
-        }
-
-        if (commandName == "down")
-        {
-            Aim += commandValue;
+            case "forward":
+                Position += commandValue;
+                Depth += Aim * commandValue;
+                break;
+            case "down":
+                Aim += commandValue;
+                break;
         }
     }
 
