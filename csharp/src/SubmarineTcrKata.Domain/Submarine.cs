@@ -13,7 +13,6 @@ public record Submarine(int Depth, int Position, int Aim) : ISubmarine
         command.ExecuteCommand(this);
     }
 
-
     public int Aim { get; set; } = Aim;
 
     public int Position { get; set; } = Position;
