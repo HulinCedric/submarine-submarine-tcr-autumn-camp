@@ -10,27 +10,15 @@ public record Submarine(int Depth, int Position, int Aim) : ISubmarine
     {
         var command = Command.New(commandDescription);
 
-        switch (command.Name)
-        {
-            case "forward":
-                Position += command.Value;
-                Depth += Aim * command.Value;
-                break;
-            case "down":
-                Aim += command.Value;
-                break;
-            case "up":
-                Aim -= command.Value;
-                break;
-        }
+        command.ExecuteCommand(this);
     }
 
 
-    public int Aim { get; private set; } = Aim;
+    public int Aim { get; set; } = Aim;
 
-    public int Position { get; private set; } = Position;
+    public int Position { get; set; } = Position;
 
-    public int Depth { get; private set; } = Depth;
+    public int Depth { get; set; } = Depth;
 }
 
 public record Command(string Name, int Value)
@@ -41,5 +29,22 @@ public record Command(string Name, int Value)
         var commandName = commandParts[0];
         var commandValue = int.Parse(commandParts[1]);
         return new Command(commandName, commandValue);
+    }
+
+    public void ExecuteCommand(Submarine submarine)
+    {
+        switch (this.Name)
+        {
+            case "forward":
+                submarine.Position += this.Value;
+                submarine.Depth += submarine.Aim * this.Value;
+                break;
+            case "down":
+                submarine.Aim += this.Value;
+                break;
+            case "up":
+                submarine.Aim -= this.Value;
+                break;
+        }
     }
 }
