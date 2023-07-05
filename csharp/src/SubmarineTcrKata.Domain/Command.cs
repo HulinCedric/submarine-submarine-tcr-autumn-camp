@@ -14,6 +14,7 @@ public record Command(string Name, int Value)
     {
         switch (Name)
         {
+            
             case "forward":
                 submarine.Position += Value;
                 submarine.Depth += submarine.Aim * Value;
