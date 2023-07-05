@@ -31,12 +31,7 @@ public class SubmarineTestBuilder
         => new();
 
     public Submarine Build()
-        => new()
-        {
-            Aim = _aim,
-            Position = _position,
-            Depth = _depth
-        };
+        => new(_depth, _position, _aim);
 
     public SubmarineTestBuilder WithAim(int aim)
     {
