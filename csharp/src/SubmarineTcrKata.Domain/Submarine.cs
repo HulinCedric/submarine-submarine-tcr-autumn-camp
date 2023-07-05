@@ -32,9 +32,9 @@ public record Submarine : ISubmarine
         }
     }
 
-    public int Aim { get; set; }
+    public int Aim { get; private set; }
 
-    public int Position { get; set; }
+    public int Position { get; private set; }
 
-    public int Depth { get; set; }
+    public int Depth { get; private set; }
 }
