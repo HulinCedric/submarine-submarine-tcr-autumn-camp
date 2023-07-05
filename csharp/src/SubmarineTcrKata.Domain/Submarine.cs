@@ -1,17 +1,10 @@
 namespace SubmarineTcrKata.Domain;
 
-public record Submarine : ISubmarine
+public record Submarine(int Depth, int Position, int Aim) : ISubmarine
 {
     
     public Submarine(): this(0,0,0)
     {
-    }
-
-    public Submarine(int depth, int position, int aim)
-    {
-        Depth = depth;
-        Position = position;
-        Aim = aim;
     }
 
     public void ExecuteCommand(string command)
@@ -32,9 +25,9 @@ public record Submarine : ISubmarine
         }
     }
 
-    public int Aim { get; set; }
+    public int Aim { get; set; } = Aim;
 
-    public int Position { get; set; }
+    public int Position { get; set; } = Position;
 
-    public int Depth { get; set; }
+    public int Depth { get; set; } = Depth;
 }
