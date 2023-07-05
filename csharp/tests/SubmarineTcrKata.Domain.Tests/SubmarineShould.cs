@@ -45,6 +45,16 @@ public class SubmarineShould
 
         submarine.Should().BeEquivalentTo(Submarine().WithDepth(0).WithPosition(5).WithAim(5).Build());
     }
+    
+    [Fact]
+    public void Decrease_X_on_aim_like_in_down_X_command()
+    {
+        var submarine = Submarine().WithDepth(0).WithPosition(5).WithAim(0).Build();
+
+        submarine.ExecuteCommand("down 5");
+
+        submarine.Should().BeEquivalentTo(Submarine().WithDepth(0).WithPosition(5).WithAim(5).Build());
+    }
 
     [Fact]
     public void Be_equal_on_value()
