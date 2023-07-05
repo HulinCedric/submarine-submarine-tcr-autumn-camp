@@ -4,11 +4,8 @@ public record Submarine : ISubmarine
 {
 
     
-    public Submarine()
+    public Submarine(): this(0,0,0)
     {
-        Depth = 0;
-        Position = 0;
-        Aim = 0;
     }
 
     public Submarine(int initialDepth, int initialPosition, int initialAim)
