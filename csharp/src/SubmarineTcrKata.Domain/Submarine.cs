@@ -8,9 +8,7 @@ public record Submarine(int Depth, int Position, int Aim) : ISubmarine
 
     public void ExecuteCommand(string commandDescription)
     {
-        var command = Command.New(commandDescription);
-
-        command.ExecuteCommand(this);
+        Command.New(commandDescription).ExecuteCommand(this);
     }
 
     public int Aim { get; set; } = Aim;
