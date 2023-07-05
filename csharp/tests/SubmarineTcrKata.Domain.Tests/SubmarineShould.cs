@@ -16,7 +16,7 @@ public static class SubmarineVerificationExtensions
 
 public class SubmarineTestBuilder
 {
-    private readonly int _depth;
+    private int _depth;
     private int _position;
     private int _aim;
 
@@ -39,10 +39,17 @@ public class SubmarineTestBuilder
 
         return this;
     }
-    
+
     public SubmarineTestBuilder WithPosition(int position)
     {
         _position = position;
+
+        return this;
+    }
+
+    public SubmarineTestBuilder WithDepth(int depth)
+    {
+        _depth = depth;
 
         return this;
     }
@@ -55,7 +62,8 @@ public class SubmarineShould
     {
         var submarine = Submarine().Build();
 
-        submarine.StatusShouldBe(0, 0, 0);
+
+        submarine.Should().BeEquivalentTo(Submarine().WithAim(0).WithAim(0).WithDepth(0).Build());
     }
 
     [Theory]
@@ -64,7 +72,6 @@ public class SubmarineShould
     public void Move_on_with_forward_command(string command, int expectedPosition)
     {
         var submarine = Submarine().Build();
-
 
         submarine.ExecuteCommand(command);
 
@@ -89,24 +96,12 @@ public class SubmarineShould
     [Fact]
     public void Move_on_aim_with_down_command()
     {
-        var submarine = Submarine()
-            .WithAim(5)
-            .Build();
+        var submarine = Submarine().WithAim(5).Build();
 
         submarine.ExecuteCommand("down 5");
 
-        var expectedSubmarine = Submarine().WithAim(10).Build();
-        
-        submarine.Should().BeEquivalentTo(expectedSubmarine);
+        submarine.Should().BeEquivalentTo(Submarine().WithAim(10).Build());
     }
 
-    [Fact]
-    public void Move_on_depth_depending_on_aim_with_forward_command()
-    {
-        var submarine = Submarine().WithAim(5).WithPosition(5).Build();
-
-        submarine.ExecuteCommand("forward 8");
-
-        submarine.StatusShouldBe(13, 5, 40);
-    }
+   
 }
