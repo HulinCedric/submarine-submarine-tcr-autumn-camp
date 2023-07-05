@@ -14,17 +14,29 @@ public record Command(string Name, int Value)
     {
         switch (Name)
         {
-            
             case "forward":
-                submarine.Position += Value;
-                submarine.Depth += submarine.Aim * Value;
+                MoveForward(submarine);
                 break;
+
             case "down":
-                submarine.Aim += Value;
+                MoveDown(submarine);
                 break;
+
             case "up":
-                submarine.Aim -= Value;
+                MoveUp(submarine);
                 break;
         }
+    }
+
+    private void MoveUp(Submarine submarine)
+        => submarine.Aim -= Value;
+
+    private void MoveDown(Submarine submarine)
+        => submarine.Aim += Value;
+
+    private void MoveForward(Submarine submarine)
+    {
+        submarine.Position += Value;
+        submarine.Depth += submarine.Aim * Value;
     }
 }
