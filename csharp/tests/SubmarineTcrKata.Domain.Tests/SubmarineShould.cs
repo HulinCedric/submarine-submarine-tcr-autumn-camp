@@ -17,7 +17,7 @@ public static class SubmarineVerificationExtensions
 public class SubmarineTestBuilder
 {
     private readonly int _depth;
-    private readonly int _position;
+    private int _position;
     private int _aim;
 
     private SubmarineTestBuilder()
@@ -36,6 +36,13 @@ public class SubmarineTestBuilder
     public SubmarineTestBuilder WithAim(int aim)
     {
         _aim = aim;
+
+        return this;
+    }
+    
+    public SubmarineTestBuilder WithPosition(int position)
+    {
+        _position = position;
 
         return this;
     }
@@ -96,10 +103,8 @@ public class SubmarineShould
     [Fact]
     public void Move_on_depth_depending_on_aim_with_forward_command()
     {
-        var submarine = Submarine().Build();
+        var submarine = Submarine().WithAim(5).WithPosition(5).Build();
 
-        submarine.ExecuteCommand("forward 5");
-        submarine.ExecuteCommand("down 5");
         submarine.ExecuteCommand("forward 8");
 
         submarine.StatusShouldBe(13, 5, 40);
